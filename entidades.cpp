@@ -1,18 +1,17 @@
-#ifndef ENTIDADES_H
-#define ENTIDADES_H
+#include "entidades.h"
 
-#include "dominios.h"
+void ExemploEntidade::setSenha(const Senha &senha) {
+    this->senha = senha;
+}
 
-class ExemploEntidade {
-private:
-    Senha senha;
-    Setor setor;
+Senha ExemploEntidade::getSenha() const {
+    return senha;
+}
 
-public:
-    void setSenha(const Senha&);
-    Senha getSenha() const;
-    void setSetor(const Setor&);
-    Setor getSetor() const;
-};
+void ExemploEntidade::setSetor(const Setor &setor) {
+    this->setor = setor;
+}
 
-#endif
+Setor ExemploEntidade::getSetor() const {
+    return setor;
+}
