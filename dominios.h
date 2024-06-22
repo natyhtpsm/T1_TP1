@@ -3,6 +3,9 @@
 
 #include <string>
 #include <stdexcept>
+#include <vector>
+#include <algorithm>
+#include <cctype>
 
 using namespace std;
 
@@ -67,5 +70,23 @@ class Estado {
 inline const string Estado::getValor() {
     return valor;
 }
+
+class Nome {
+private:
+    std::string valor;
+    void validar(const std::string &);
+public:
+    void setValor(const std::string &);
+    std::string getValor() const;
+};
+
+class Percentual {
+private:
+    int valor;
+    void validar(int);
+public:
+    void setValor(int);
+    int getValor() const;
+};
 
 #endif

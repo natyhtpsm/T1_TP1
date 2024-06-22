@@ -3,11 +3,10 @@
 
 #include "dominios.h"
 
-class ExemploEntidade {
+class Entidade {
 private:
     Senha senha;
     Setor setor;
-
 public:
     void setSenha(const Senha&);
     Senha getSenha() const;

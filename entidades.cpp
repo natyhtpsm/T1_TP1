@@ -1,17 +1,17 @@
 #include "entidades.h"
 
-void ExemploEntidade::setSenha(const Senha &senha) {
+void Entidade::setSenha(const Senha &senha) {
     this->senha = senha;
 }
 
-Senha ExemploEntidade::getSenha() const {
+Senha Entidade::getSenha() const {
     return senha;
 }
 
-void ExemploEntidade::setSetor(const Setor &setor) {
+void Entidade::setSetor(const Setor &setor) {
     this->setor = setor;
 }
 
-Setor ExemploEntidade::getSetor() const {
+Setor Entidade::getSetor() const {
     return setor;
 }
