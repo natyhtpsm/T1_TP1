@@ -109,4 +109,14 @@ public:
     void setValor(const char* valor);
 };
 
+class Dinheiro {
+private:
+    double valor;
+    void validar(double valor);
+
+public:
+    double getValor() const;
+    void setValor(double valor);
+};
+
 #endif
