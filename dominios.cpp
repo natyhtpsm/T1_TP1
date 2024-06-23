@@ -1,6 +1,8 @@
 #include "dominios.h"
 #include <algorithm>
 #include <vector>
+#include <iostream>
+#include <cstdlib> 
 
 void Senha::validar(const std::string &valor) {
     if (valor.length() != 6) {
@@ -55,7 +57,6 @@ std::string Setor::getValor() const {
     return valor;
 }
 
-//---------CPF-----------------------------------------------------------------------------------
 void CPF::setValor(const string &cpf) {
     this->validar(cpf);
     valor = cpf;
@@ -155,7 +156,6 @@ void CPF::validar(const string &cpf) {
     }
 }
 
-//---------Data-----------------------------------------------------------------------------------
 void Data::setValor(const string &data) {
     this->validar(data);
     valor = data;
@@ -254,7 +254,6 @@ void Data::validar(const string &data) {
 
 }
 
-//---------Estado-----------------------------------------------------------------------------------
 void Estado::setValor(const string &estado) {
     this->validar(estado);
     valor = estado;
@@ -267,4 +266,89 @@ void Estado::validar(const string &estado) {
         }
     }
     throw invalid_argument("Argumento invalido");
+}
+
+void CodigoDePagamento::validar(const char* valor) {
+    int length = 0;
+    while (valor[length] != '\0') {
+        length++;
+    }
+    if (length != 8) {
+        std::cerr << "Erro: Codigo de pagamento deve ter exatamente 8 digitos." << std::endl;
+        std::exit(EXIT_FAILURE);
+    }
+
+    if (valor[0] == '0') {
+        std::cerr << "Erro: O primeiro digito do codigo de pagamento deve ser diferente de zero." << std::endl;
+        std::exit(EXIT_FAILURE);
+    }
+
+    for (int i = 0; i < 8; ++i) {
+        if (valor[i] < '0' || valor[i] > '9') {
+            std::cerr << "Erro: O codigo de pagamento deve conter apenas digitos." << std::endl;
+            std::exit(EXIT_FAILURE);
+        }
+    }
+}
+
+const char* CodigoDePagamento::getValor() const {
+    return codigo;
+}
+
+void CodigoDePagamento::setValor(const char* valor) {
+    validar(valor);
+    for (int i = 0; i < 8; ++i) {
+        codigo[i] = valor[i];
+    }
+    codigo[8] = '\0'; 
+}
+
+void CodigoDeTitulo::validar(const char* valor) {
+    int length = 0;
+    while (valor[length] != '\0') {
+        length++;
+    }
+    if (length != 11) {
+        std::cerr << "Erro: Codigo de título deve ter exatamente 11 caracteres." << std::endl;
+        std::exit(EXIT_FAILURE);
+    }
+
+    const char* valid_prefixes[] = {"CDB", "CRA", "CRI", "LCA", "LCI", "DEB"};
+    bool prefix_valid = false;
+    for (int i = 0; i < 6; ++i) {
+        bool match = true;
+        for (int j = 0; j < 3; ++j) {
+            if (valor[j] != valid_prefixes[i][j]) {
+                match = false;
+                break;
+            }
+        }
+        if (match) {
+            prefix_valid = true;
+            break;
+        }
+    }
+    if (!prefix_valid) {
+        std::cerr << "Erro: Prefixo inválido." << std::endl;
+        std::exit(EXIT_FAILURE);
+    }
+
+    for (int i = 3; i < 11; ++i) {
+        if (!((valor[i] >= '0' && valor[i] <= '9') || (valor[i] >= 'A' && valor[i] <= 'Z'))) {
+            std::cerr << "Erro: Código de título deve conter apenas letras maiúsculas ou dígitos após o prefixo." << std::endl;
+            std::exit(EXIT_FAILURE);
+        }
+    }
+}
+
+const char* CodigoDeTitulo::getValor() const {
+    return codigo;
+}
+
+void CodigoDeTitulo::setValor(const char* valor) {
+    validar(valor);
+    for (int i = 0; i < 11; ++i) {
+        codigo[i] = valor[i];
+    }
+    codigo[11] = '\0'; 
 }

@@ -89,4 +89,24 @@ public:
     int getValor() const;
 };
 
+class CodigoDePagamento {
+    private:
+        char codigo[9];
+        void validar(const char* valor);
+
+    public:
+        const char* getValor() const;
+        void setValor(const char* valor);
+};
+
+class CodigoDeTitulo {
+private:
+    char codigo[12];
+    void validar(const char* valor);
+
+public:
+    const char* getValor() const;
+    void setValor(const char* valor);
+};
+
 #endif
