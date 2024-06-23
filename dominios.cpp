@@ -59,11 +59,11 @@ std::string Setor::getValor() const {
 
 void Dinheiro::validar(double valor) {
     if (valor < 0.0) {
-        std::cerr << "Erro: O valor de dinheiro não pode ser negativo." << std::endl;
+        std::cerr << "Erro: O valor não pode ser negativo." << std::endl;
         std::exit(EXIT_FAILURE);
     }
     if (valor > 1000000.0) {
-        std::cerr << "Erro: O valor de dinheiro não pode exceder 1.000.000,00." << std::endl;
+        std::cerr << "Erro: O valor não pode exceder 1.000.000,00." << std::endl;
         std::exit(EXIT_FAILURE);
     }
 }
