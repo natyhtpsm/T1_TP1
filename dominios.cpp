@@ -57,6 +57,36 @@ std::string Setor::getValor() const {
     return valor;
 }
 
+void Nome::validar(const std::string &valor) {
+    if (valor.empty()) {
+        throw std::invalid_argument("Nome não pode ser vazio.");
+    }
+}
+
+void Nome::setValor(const std::string &valor) {
+    validar(valor);
+    this->valor = valor;
+}
+
+std::string Nome::getValor() const {
+    return valor;
+}
+
+void Percentual::validar(int valor) {
+    if (valor < 0 || valor > 100) {
+        throw std::invalid_argument("Percentual deve estar entre 0 e 100.");
+    }
+}
+
+void Percentual::setValor(int valor) {
+    validar(valor);
+    this->valor = valor;
+}
+
+int Percentual::getValor() const {
+    return valor;
+}
+
 void Dinheiro::validar(double valor) {
     if (valor < 0.0) {
         std::cerr << "Erro: O valor não pode ser negativo." << std::endl;
