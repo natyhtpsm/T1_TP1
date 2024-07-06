@@ -156,3 +156,46 @@ int TUPercentual::run() {
     tearDown();
     return estado;
 }
+
+void TUData::setUp() {
+    estado = SUCESSO;
+    data = new Data();
+}
+
+void TUData::tearDown() {
+    delete data;
+}
+
+void TUData::testarCenarioSucesso() {
+    for (string valor : valores_validos) {
+        try {
+            data->setValor(valor);
+            if (data->getValor() != valor) {
+                estado = FALHA;
+            }
+        }
+        catch (invalid_argument &excecao) {
+            estado = FALHA;
+        }
+    }
+}
+
+void TUData::testarCenarioFalha() {
+    for (string valor : valores_invalidos) {
+        try {
+            data->setValor(valor);
+            estado = FALHA;
+        }
+        catch (invalid_argument &excecao) {
+            return;
+        }
+    }
+}
+
+bool TUData::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}

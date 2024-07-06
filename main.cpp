@@ -32,5 +32,12 @@ int main() {
         std::cout << "Teste de Percentual falhou!" << std::endl;
     }
 
+    TUData testeData;
+    if (testeData.run() == TUData::SUCESSO) {
+        cout << "Teste de Data passou!" << endl;
+    } else {
+        cout << "Teste de Data falhou!" << endl;
+    }
+
     return 0;
 }

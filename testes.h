@@ -82,4 +82,22 @@ public:
     int run();
 };
 
+class TUData {
+    private:
+        const string valores_validos[4] = {"18-04-2005","31-12-2055","29-02-2012","01-01-2001"};
+        const string valores_invalidos[5] = {"18/04/2005","02-03-15","29-02-2010","31-04-2071","12-12-1999"};
+        
+        Data *data;
+        bool estado;
+
+        void testarCenarioSucesso();
+        void testarCenarioFalha();
+        void setUp();
+        void tearDown();
+    public:
+        const static bool FALHA = false, SUCESSO = true;
+
+        bool run();
+};
+
 #endif 
