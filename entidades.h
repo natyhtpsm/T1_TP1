@@ -48,4 +48,41 @@ public:
     Dinheiro getDinheiro() const;
 };
 
+class Pagamento {
+    private:
+        CodigoDePagamento codigo;
+        Data data;
+        Percentual percentual;
+        Estado estado;
+
+    public:
+        void setCodigo(const CodigoDePagamento&);
+        CodigoDePagamento getCodigo();
+
+        void setData(const Data&);
+        Data getData();
+
+        void setPercentual(const Percentual&);
+        Percentual getPercentual();
+
+        void setEstado(const Estado&);
+        Estado getEstado();
+};
+
+inline CodigoDePagamento Pagamento::getCodigo() {
+    return codigo;
+}
+
+inline Data Pagamento::getData() {
+    return data;
+}
+
+inline Percentual Pagamento::getPercentual() {
+    return percentual;
+}
+
+inline Estado Pagamento::getEstado() {
+    return estado;
+}
+
 #endif

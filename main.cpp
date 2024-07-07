@@ -53,5 +53,19 @@ int main() {
         cout << "Teste de Estado falhou!" << endl;
     }
 
+    TUCodigoDePagamento testeCodigoPagamento;
+    if (testeCodigoPagamento.run() == TUCodigoDePagamento::SUCESSO) {
+        cout << "Teste de Codigo de Pagamento passou!" << endl;
+    } else {
+        cout << "Teste de Codigo de Pagamento falhou!" << endl;
+    }
+
+    TUPagamento testePagamento;
+    if (testePagamento.run() == TUPagamento::SUCESSO) {
+        cout << "Teste de Pagamento passou!" << endl;
+    } else {
+        cout << "Teste de Pagamento falhou!" << endl; 
+    }
+
     return 0;
 }

@@ -1,6 +1,9 @@
 #include "testes.h"
 #include <string.h>
 
+using namespace std;
+#include <iostream>
+
 const string TUSenha::VALOR_VALIDO = "123789";
 const string TUSenha::VALOR_INVALIDO = "123";
 
@@ -282,6 +285,92 @@ bool TUEstado::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+void TUCodigoDePagamento::setUp() {
+    codigo_de_pagamento = new CodigoDePagamento();
+    estado = SUCESSO;
+}
+
+void TUCodigoDePagamento::tearDown() {
+    delete codigo_de_pagamento;
+}
+
+void TUCodigoDePagamento::testarCenarioSucesso() {
+    for (string valor : valores_validos) {
+        try {
+            codigo_de_pagamento->setValor(valor);
+            if (codigo_de_pagamento->getValor() != valor) {
+                estado = FALHA;
+            }
+        }
+        catch (invalid_argument &excecao) {
+            estado = FALHA;
+        }
+    }
+}
+
+void TUCodigoDePagamento::testarCenarioFalha() {
+    for (string valor : valores_invalidos) {
+        try {
+            codigo_de_pagamento->setValor(valor);
+            estado = FALHA;
+        }
+        catch (invalid_argument &excecao) {
+            return;
+        }
+    }
+}
+
+bool TUCodigoDePagamento::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+void TUPagamento::setUp() {
+    pagamento = new Pagamento();
+    percentual = new Percentual();
+    codigo = new CodigoDePagamento();
+    data = new Data();
+    estado_teste = new Estado();
+    estado = SUCESSO;
+}
+
+void TUPagamento::tearDown() {
+    delete pagamento;
+    delete percentual;
+    delete codigo;
+    delete data;
+    delete estado_teste;
+}
+
+void TUPagamento::test() {
+    int valor_percentual = stoi(valores[0]);
+    string valor_codigo = valores[1], valor_data = valores[2], valor_estado = valores[3];
+
+    percentual->setValor(valor_percentual);
+    codigo->setValor(valores[1]);
+    data->setValor(valores[2]);
+    estado_teste->setValor(valores[3]);
+
+    pagamento->setPercentual(*percentual);
+    pagamento->setCodigo(*codigo);
+    pagamento->setData(*data);
+    pagamento->setEstado(*estado_teste);
+
+    if (pagamento->getPercentual().getValor() != valor_percentual || pagamento->getCodigo().getValor() != valor_codigo || pagamento->getData().getValor() != valor_data || pagamento->getEstado().getValor() != valor_estado) {
+        estado = FALHA;
+    }
+}
+
+bool TUPagamento::run() {
+    setUp();
+    test();
     tearDown();
     return estado;
 }
