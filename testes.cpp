@@ -199,3 +199,46 @@ bool TUData::run() {
     tearDown();
     return estado;
 }
+
+void TUCPF::setUp() {
+    cpf = new CPF();
+    estado = SUCESSO;
+}
+
+void TUCPF::tearDown() {
+    delete cpf;
+}
+
+void TUCPF::testarCenarioSucesso() {
+    for (string valor : valores_validos) {
+        try {
+            cpf->setValor(valor);
+            if (cpf->getValor() != valor) {
+                estado = FALHA;
+            }
+        }
+        catch (invalid_argument &excecao) {
+            estado = FALHA;
+        }
+    }
+}
+
+void TUCPF::testarCenarioFalha() {
+    for (string valor : valores_invalidos) {
+        try {
+            cpf->setValor(valor);
+            estado = FALHA;
+        }
+        catch (invalid_argument &excecao) {
+            return;
+        }
+    }
+}
+
+bool TUCPF::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}

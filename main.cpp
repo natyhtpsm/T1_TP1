@@ -39,5 +39,12 @@ int main() {
         cout << "Teste de Data falhou!" << endl;
     }
 
+    TUCPF testeCPF;
+    if (testeCPF.run() == TUCPF::SUCESSO) {
+        cout << "Teste de CPF passou!" << endl;
+    } else {
+        cout << "Teste de CPF falhou!" << endl;
+    }
+    
     return 0;
 }
