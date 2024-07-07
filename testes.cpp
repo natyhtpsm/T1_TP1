@@ -2,7 +2,6 @@
 #include <string.h>
 
 using namespace std;
-#include <iostream>
 
 const string TUSenha::VALOR_VALIDO = "123789";
 const string TUSenha::VALOR_INVALIDO = "123";
