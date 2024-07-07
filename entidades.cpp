@@ -95,3 +95,15 @@ void Pagamento::setEstado(const Estado &estado) {
 void Pagamento::setPercentual(const Percentual &percentual) {
     this->percentual = percentual;
 }
+
+void Conta::setCpf(const std::string &cpf) {
+    this->cpf = cpf;
+}
+
+void Conta::setNome(const std::string &nome) {
+    this->nome = nome;
+}
+
+void Conta::setSenha(const std::string &senha) {
+    this->senha = senha;
+}

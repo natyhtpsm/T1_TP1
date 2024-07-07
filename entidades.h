@@ -85,4 +85,34 @@ inline Estado Pagamento::getEstado() {
     return estado;
 }
 
+class Conta {
+private:
+    std::string cpf;
+    std::string nome;
+    std::string senha;
+
+public:
+    void setCpf(const std::string&);
+    std::string getCpf();
+
+    void setNome(const std::string&);
+    std::string getNome();
+
+    void setSenha(const std::string&);
+    std::string getSenha();
+};
+
+inline std::string Conta::getCpf() {
+    return cpf;
+}
+
+inline std::string Conta::getNome() {
+    return nome;
+}
+
+inline std::string Conta::getSenha() {
+    return senha;
+}
+
+
 #endif
