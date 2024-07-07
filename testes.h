@@ -136,4 +136,44 @@ class TUEstado {
         bool run();
 };
 
+class TUCodigoDePagamento {
+    private:
+        const string valores_validos[3] = {"12345678", "18375801", "24274383"};
+        const string valores_invalidos[3] = {"01234567", "123456789", "a2345678"};
+
+        CodigoDePagamento *codigo_de_pagamento;
+        bool estado;
+
+        void testarCenarioSucesso();
+        void testarCenarioFalha();
+        void setUp();
+        void tearDown();
+
+    public:
+        const static bool SUCESSO = true, FALHA = false;
+
+        bool run();
+};
+
+
+class TUPagamento {
+    private:
+        const string valores[4] = {"35", "12345678", "30-03-2030", "Inadimplente"};
+
+        Pagamento *pagamento;
+        Percentual *percentual;
+        CodigoDePagamento *codigo;
+        Data *data;
+        Estado *estado_teste;
+        bool estado;
+
+        void test();
+        void setUp();
+        void tearDown();
+    public:
+        const static bool SUCESSO = true, FALHA = false;
+
+        bool run();
+};
+
 #endif 

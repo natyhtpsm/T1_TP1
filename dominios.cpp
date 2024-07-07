@@ -310,6 +310,7 @@ void Estado::setValor(const string &estado) {
 }
 
 void Estado::validar(const string &estado) {
+    const string estados_validos[3] = {"Previsto", "Liquidado", "Inadimplente"};
     for (string valido : estados_validos) {
         if (estado == valido) {
             return;
@@ -318,39 +319,46 @@ void Estado::validar(const string &estado) {
     throw invalid_argument("Argumento invalido");
 }
 
-void CodigoDePagamento::validar(const char* valor) {
-    int length = 0;
+void CodigoDePagamento::validar(const string &valor) {
+     if (valor.length() != 8) {
+        throw invalid_argument("Erro: Codigo de pagamento deve ter exatamente 8 digitos.");
+    }
+
+    if (valor[0] == '0') {
+        throw invalid_argument("Erro: O primeiro digito do codigo de pagamento deve ser diferente de zero.");
+    }
+
+    for (char caracter : valor) {
+        if (!isdigit(caracter)) {
+            throw invalid_argument("Erro: O codigo de pagamento deve conter apenas digitos.");
+        }
+    }
+
+    /*int length = 0;
     while (valor[length] != '\0') {
         length++;
     }
     if (length != 8) {
-        std::cerr << "Erro: Codigo de pagamento deve ter exatamente 8 digitos." << std::endl;
+        std::cerr << "" << std::endl;
         std::exit(EXIT_FAILURE);
     }
 
     if (valor[0] == '0') {
-        std::cerr << "Erro: O primeiro digito do codigo de pagamento deve ser diferente de zero." << std::endl;
+        std::cerr << "" << std::endl;
         std::exit(EXIT_FAILURE);
     }
 
     for (int i = 0; i < 8; ++i) {
         if (valor[i] < '0' || valor[i] > '9') {
-            std::cerr << "Erro: O codigo de pagamento deve conter apenas digitos." << std::endl;
+            std::cerr << "" << std::endl;
             std::exit(EXIT_FAILURE);
         }
-    }
+    }*/
 }
 
-const char* CodigoDePagamento::getValor() const {
-    return codigo;
-}
-
-void CodigoDePagamento::setValor(const char* valor) {
-    validar(valor);
-    for (int i = 0; i < 8; ++i) {
-        codigo[i] = valor[i];
-    }
-    codigo[8] = '\0'; 
+void CodigoDePagamento::setValor(const string &valor) {
+    this->validar(valor);
+    this->valor = valor;
 }
 
 void CodigoDeTitulo::validar(const char* valor) {

@@ -59,7 +59,6 @@ inline const string Data::getValor() {
 
 class Estado {
     private:
-        const string estados_validos[3] = {"Previsto", "Liquidado", "Inadimplente"};
         string valor;
         void validar(const string&);
     public:
@@ -91,13 +90,17 @@ public:
 
 class CodigoDePagamento {
     private:
-        char codigo[9];
-        void validar(const char* valor);
+        string valor;
+        void validar(const string&);
 
     public:
-        const char* getValor() const;
-        void setValor(const char* valor);
+        const string getValor();
+        void setValor(const string&);
 };
+
+inline const string CodigoDePagamento::getValor() {
+    return valor;
+}
 
 class CodigoDeTitulo {
 private:
