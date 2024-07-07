@@ -176,4 +176,20 @@ class TUPagamento {
         bool run();
 };
 
+class TUConta {
+private:
+    const std::string valores[3] = {"12345678900", "João da Silva", "senha123"};
+
+    Conta *conta;
+    bool estado;
+
+    void test();
+    void setUp();
+    void tearDown();
+public:
+    const static bool SUCESSO = true, FALHA = false;
+
+    bool run();
+};
+
 #endif 
