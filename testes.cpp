@@ -156,3 +156,132 @@ int TUPercentual::run() {
     tearDown();
     return estado;
 }
+
+void TUData::setUp() {
+    estado = SUCESSO;
+    data = new Data();
+}
+
+void TUData::tearDown() {
+    delete data;
+}
+
+void TUData::testarCenarioSucesso() {
+    for (string valor : valores_validos) {
+        try {
+            data->setValor(valor);
+            if (data->getValor() != valor) {
+                estado = FALHA;
+            }
+        }
+        catch (invalid_argument &excecao) {
+            estado = FALHA;
+        }
+    }
+}
+
+void TUData::testarCenarioFalha() {
+    for (string valor : valores_invalidos) {
+        try {
+            data->setValor(valor);
+            estado = FALHA;
+        }
+        catch (invalid_argument &excecao) {
+            return;
+        }
+    }
+}
+
+bool TUData::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+void TUCPF::setUp() {
+    cpf = new CPF();
+    estado = SUCESSO;
+}
+
+void TUCPF::tearDown() {
+    delete cpf;
+}
+
+void TUCPF::testarCenarioSucesso() {
+    for (string valor : valores_validos) {
+        try {
+            cpf->setValor(valor);
+            if (cpf->getValor() != valor) {
+                estado = FALHA;
+            }
+        }
+        catch (invalid_argument &excecao) {
+            estado = FALHA;
+        }
+    }
+}
+
+void TUCPF::testarCenarioFalha() {
+    for (string valor : valores_invalidos) {
+        try {
+            cpf->setValor(valor);
+            estado = FALHA;
+        }
+        catch (invalid_argument &excecao) {
+            return;
+        }
+    }
+}
+
+bool TUCPF::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+void TUEstado::setUp() {
+    estado_teste = new Estado;
+    estado = SUCESSO;
+}
+
+void TUEstado::tearDown() {
+    delete estado_teste;
+}
+
+void TUEstado::testarCenarioSucesso() {
+    for (string valor : valores_validos) {
+        try {
+            estado_teste->setValor(valor);
+            if (estado_teste->getValor() != valor) {
+                estado = FALHA;
+            }
+        }
+        catch (invalid_argument &excecao) {
+            estado = FALHA;
+        }
+    }
+}
+
+void TUEstado::testarCenarioFalha() {
+    for (string valor : valores_invalidos) {
+        try {
+            estado_teste->setValor(valor);
+            estado = FALHA;
+        }
+        catch (invalid_argument &excecao) {
+            return;
+        }
+    }
+}
+
+bool TUEstado::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}

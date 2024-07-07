@@ -32,5 +32,26 @@ int main() {
         std::cout << "Teste de Percentual falhou!" << std::endl;
     }
 
+    TUData testeData;
+    if (testeData.run() == TUData::SUCESSO) {
+        cout << "Teste de Data passou!" << endl;
+    } else {
+        cout << "Teste de Data falhou!" << endl;
+    }
+
+    TUCPF testeCPF;
+    if (testeCPF.run() == TUCPF::SUCESSO) {
+        cout << "Teste de CPF passou!" << endl;
+    } else {
+        cout << "Teste de CPF falhou!" << endl;
+    }
+
+    TUEstado testeEstado;
+    if (testeEstado.run() == TUEstado::SUCESSO) {
+        cout << "Teste de Estado passou!" << endl;
+    } else {
+        cout << "Teste de Estado falhou!" << endl;
+    }
+
     return 0;
 }
