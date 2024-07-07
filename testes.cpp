@@ -373,3 +373,33 @@ bool TUPagamento::run() {
     tearDown();
     return estado;
 }
+
+void TUConta::setUp() {
+    conta = new Conta();
+    estado = SUCESSO;
+}
+
+void TUConta::tearDown() {
+    delete conta;
+}
+
+void TUConta::test() {
+    std::string valor_cpf = valores[0];
+    std::string valor_nome = valores[1];
+    std::string valor_senha = valores[2];
+
+    conta->setCpf(valor_cpf);
+    conta->setNome(valor_nome);
+    conta->setSenha(valor_senha);
+
+    if (conta->getCpf() != valor_cpf || conta->getNome() != valor_nome || conta->getSenha() != valor_senha) {
+        estado = FALHA;
+    }
+}
+
+bool TUConta::run() {
+    setUp();
+    test();
+    tearDown();
+    return estado;
+}
