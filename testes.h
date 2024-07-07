@@ -118,4 +118,22 @@ class TUCPF {
         bool run();
 };
 
+class TUEstado {
+    private:
+        const string valores_validos[3] = {"Previsto", "Liquidado", "Inadimplente"};
+        const string valores_invalidos[5] = {"2", "Banana", "Liquidad", "inadimplente", "Pneumoultramicroscopicossilicovulcanoconiose"};
+
+        Estado *estado_teste;
+        bool estado;
+
+        void testarCenarioSucesso();
+        void testarCenarioFalha();
+        void setUp();
+        void tearDown();
+    public:
+        const static bool SUCESSO = true, FALHA = false;
+
+        bool run();
+};
+
 #endif 

@@ -242,3 +242,46 @@ bool TUCPF::run() {
     tearDown();
     return estado;
 }
+
+void TUEstado::setUp() {
+    estado_teste = new Estado;
+    estado = SUCESSO;
+}
+
+void TUEstado::tearDown() {
+    delete estado_teste;
+}
+
+void TUEstado::testarCenarioSucesso() {
+    for (string valor : valores_validos) {
+        try {
+            estado_teste->setValor(valor);
+            if (estado_teste->getValor() != valor) {
+                estado = FALHA;
+            }
+        }
+        catch (invalid_argument &excecao) {
+            estado = FALHA;
+        }
+    }
+}
+
+void TUEstado::testarCenarioFalha() {
+    for (string valor : valores_invalidos) {
+        try {
+            estado_teste->setValor(valor);
+            estado = FALHA;
+        }
+        catch (invalid_argument &excecao) {
+            return;
+        }
+    }
+}
+
+bool TUEstado::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}

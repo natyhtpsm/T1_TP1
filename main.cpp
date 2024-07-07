@@ -45,6 +45,13 @@ int main() {
     } else {
         cout << "Teste de CPF falhou!" << endl;
     }
-    
+
+    TUEstado testeEstado;
+    if (testeEstado.run() == TUEstado::SUCESSO) {
+        cout << "Teste de Estado passou!" << endl;
+    } else {
+        cout << "Teste de Estado falhou!" << endl;
+    }
+
     return 0;
 }
