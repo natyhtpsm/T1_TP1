@@ -48,6 +48,13 @@ class Entidade {
         Dinheiro getDinheiro() const;
 };
 
+/**
+ * Composto por:\n
+ *  código (CodigoDePagamento)\n
+ *  data (Data)\n
+ *  percentual (Percentual)\n
+ *  estado (Estado)\n
+ */
 //Matricula: 231036050
 class Pagamento {
     private:
@@ -57,10 +64,26 @@ class Pagamento {
         Estado estado;
 
     public:
+        /**
+         * @brief Atualiza a intância do código.
+         * @param codigo (CodigoDePagamento)
+         */
         void setCodigo(const CodigoDePagamento&);
+        /**
+         * @brief Retorna a instância do código.
+         * @return codigo (CodigoDePagamento)
+         */
         CodigoDePagamento getCodigo();
 
+        /**
+         * @brief Atualiza a instância da data.
+         * @param data (Data)
+         */
         void setData(const Data&);
+        /**
+         * @brief Retorna a instância da data.
+         * @return data (Data)
+         */
         Data getData();
 
         void setPercentual(const Percentual&);
@@ -70,22 +93,18 @@ class Pagamento {
         Estado getEstado();
 };
 
-//Matricula: 231036050
 inline CodigoDePagamento Pagamento::getCodigo() {
     return codigo;
 }
 
-//Matricula: 231036050
 inline Data Pagamento::getData() {
     return data;
 }
 
-//Matricula: 231036050
 inline Percentual Pagamento::getPercentual() {
     return percentual;
 }
 
-//Matricula: 231036050
 inline Estado Pagamento::getEstado() {
     return estado;
 }
@@ -108,17 +127,14 @@ class Conta {
         std::string getSenha();
 };
 
-//Matricula: 170153169
 inline std::string Conta::getCpf() {
     return cpf;
 }
 
-//Matricula: 170153169
 inline std::string Conta::getNome() {
     return nome;
 }
 
-//Matricula: 170153169
 inline std::string Conta::getSenha() {
     return senha;
 }
@@ -153,32 +169,26 @@ class Titulo {
         double getValor();
 };
 
-//Matricula: 170153169
 inline std::string Titulo::getCodigo() {
     return codigo;
 }
 
-//Matricula: 170153169
 inline std::string Titulo::getEmissor() {
     return emissor;
 }
 
-//Matricula: 170153169
 inline std::string Titulo::getSetor() {
     return setor;
 }
 
-//Matricula: 170153169
 inline std::string Titulo::getEmissao() {
     return emissao;
 }
 
-//Matricula: 170153169
 inline std::string Titulo::getVencimento() {
     return vencimento;
 }
 
-//Matricula: 170153169
 inline double Titulo::getValor() {
     return valor;
 }
