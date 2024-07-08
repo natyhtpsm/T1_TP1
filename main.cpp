@@ -67,5 +67,20 @@ int main() {
         cout << "Teste de Pagamento falhou!" << endl; 
     }
 
+    TUConta testeConta;
+    if (testeConta.run() == TUConta::SUCESSO) {
+        std::cout << "Teste da Conta passou.\n";
+    } else {
+        std::cout << "Teste da Conta falhou.\n";
+    }
+
+
+    TUTitulo testeTitulo;
+    if (testeTitulo.run() == TUTitulo::SUCESSO) {
+        std::cout << "Teste de Titulo passou.\n";
+    } else {
+        std::cout << "Teste de Titulo falhou.\n";
+    }
+
     return 0;
 }

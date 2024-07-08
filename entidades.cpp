@@ -95,3 +95,39 @@ void Pagamento::setEstado(const Estado &estado) {
 void Pagamento::setPercentual(const Percentual &percentual) {
     this->percentual = percentual;
 }
+
+void Conta::setCpf(const std::string &cpf) {
+    this->cpf = cpf;
+}
+
+void Conta::setNome(const std::string &nome) {
+    this->nome = nome;
+}
+
+void Conta::setSenha(const std::string &senha) {
+    this->senha = senha;
+}
+
+void Titulo::setCodigo(const std::string &codigo) {
+    this->codigo = codigo;
+}
+
+void Titulo::setEmissor(const std::string &emissor) {
+    this->emissor = emissor;
+}
+
+void Titulo::setSetor(const std::string &setor) {
+    this->setor = setor;
+}
+
+void Titulo::setEmissao(const std::string &emissao) {
+    this->emissao = emissao;
+}
+
+void Titulo::setVencimento(const std::string &vencimento) {
+    this->vencimento = vencimento;
+}
+
+void Titulo::setValor(double valor) {
+    this->valor = valor;
+}
