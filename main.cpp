@@ -74,5 +74,13 @@ int main() {
         std::cout << "Teste da Conta falhou.\n";
     }
 
+
+    TUTitulo testeTitulo;
+    if (testeTitulo.run() == TUTitulo::SUCESSO) {
+        std::cout << "Teste de Titulo passou.\n";
+    } else {
+        std::cout << "Teste de Titulo falhou.\n";
+    }
+
     return 0;
 }

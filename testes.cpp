@@ -403,3 +403,39 @@ bool TUConta::run() {
     tearDown();
     return estado;
 }
+
+void TUTitulo::setUp() {
+    titulo = new Titulo();
+    estado = SUCESSO;
+}
+
+void TUTitulo::tearDown() {
+    delete titulo;
+}
+
+void TUTitulo::test() {
+    std::string valor_codigo = valores[0];
+    std::string valor_emissor = valores[1];
+    std::string valor_setor = valores[2];
+    std::string valor_emissao = valores[3];
+    std::string valor_vencimento = valores[4];
+    double valor_valor = std::stod(valores[5]);
+
+    titulo->setCodigo(valor_codigo);
+    titulo->setEmissor(valor_emissor);
+    titulo->setSetor(valor_setor);
+    titulo->setEmissao(valor_emissao);
+    titulo->setVencimento(valor_vencimento);
+    titulo->setValor(valor_valor);
+
+    if (titulo->getCodigo() != valor_codigo || titulo->getEmissor() != valor_emissor || titulo->getSetor() != valor_setor || titulo->getEmissao() != valor_emissao || titulo->getVencimento() != valor_vencimento || titulo->getValor() != valor_valor) {
+        estado = FALHA;
+    }
+}
+
+bool TUTitulo::run() {
+    setUp();
+    test();
+    tearDown();
+    return estado;
+}
