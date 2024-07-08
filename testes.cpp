@@ -439,3 +439,83 @@ bool TUTitulo::run() {
     tearDown();
     return estado;
 }
+
+void TUCodigoDeTitulo::setUp() {
+    codigo_de_titulo = new CodigoDeTitulo();
+    estado = SUCESSO;
+}
+
+void TUCodigoDeTitulo::tearDown() {
+    delete codigo_de_titulo;
+}
+
+void TUCodigoDeTitulo::testarCenarioSucesso() {
+    for (const std::string &valor : valores_validos) {
+        try {
+            codigo_de_titulo->setValor(valor.c_str());
+            if (codigo_de_titulo->getValor() != valor) {
+                estado = FALHA;
+            }
+        } catch (std::invalid_argument &excecao) {
+            estado = FALHA;
+        }
+    }
+}
+
+void TUCodigoDeTitulo::testarCenarioFalha() {
+    for (const std::string &valor : valores_invalidos) {
+        try {
+            codigo_de_titulo->setValor(valor.c_str());
+            estado = FALHA;
+        } catch (std::invalid_argument &excecao) {
+            
+        }
+    }
+}
+
+bool TUCodigoDeTitulo::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+const int TUDinheiro::VALOR_VALIDO = 9876543;
+const int TUDinheiro::VALOR_INVALIDO = -10;
+
+void TUDinheiro::setUp() {
+    dinheiro = new Dinheiro();
+    estado = SUCESSO;
+}
+
+void TUDinheiro::tearDown() {
+    delete dinheiro;
+}
+
+void TUDinheiro::testarCenarioSucesso() {
+    try {
+        dinheiro->setValor(VALOR_VALIDO);
+        if (dinheiro->getValor() != VALOR_VALIDO)
+            estado = FALHA;
+    } catch (invalid_argument &excecao) {
+        estado = FALHA;
+    }
+}
+
+void TUDinheiro::testarCenarioFalha() {
+    try {
+        dinheiro->setValor(VALOR_INVALIDO);
+        estado = FALHA;
+    } catch (invalid_argument &excecao) {
+        return;
+    }
+}
+
+int TUDinheiro::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
