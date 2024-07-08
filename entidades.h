@@ -114,5 +114,58 @@ inline std::string Conta::getSenha() {
     return senha;
 }
 
+class Titulo {
+private:
+    std::string codigo; 
+    std::string emissor;
+    std::string setor;
+    std::string emissao;
+    std::string vencimento;
+    double valor;
+
+public:
+    void setCodigo(const std::string&);
+    std::string getCodigo();
+
+    void setEmissor(const std::string&);
+    std::string getEmissor();
+
+    void setSetor(const std::string&);
+    std::string getSetor();
+
+    void setEmissao(const std::string&);
+    std::string getEmissao();
+
+    void setVencimento(const std::string&);
+    std::string getVencimento();
+
+    void setValor(double);
+    double getValor();
+};
+
+inline std::string Titulo::getCodigo() {
+    return codigo;
+}
+
+inline std::string Titulo::getEmissor() {
+    return emissor;
+}
+
+inline std::string Titulo::getSetor() {
+    return setor;
+}
+
+inline std::string Titulo::getEmissao() {
+    return emissao;
+}
+
+inline std::string Titulo::getVencimento() {
+    return vencimento;
+}
+
+inline double Titulo::getValor() {
+    return valor;
+}
+
 
 #endif
