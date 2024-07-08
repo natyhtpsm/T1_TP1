@@ -217,4 +217,44 @@ class TUTitulo {
 
         bool run();
 };
+
+//Matricula: 180043013
+class TUCodigoDeTitulo {
+    private:
+        const std::string valores_validos[3] = {"CDB1234ABCD", "CRA321DFN21", "LCI98745FOI"};
+        const std::string valores_invalidos[3] = {"1234567", "cra23490kdf", "DEB9834bfds"};
+
+        CodigoDeTitulo *codigo_de_titulo;
+        bool estado;
+
+        void testarCenarioSucesso();
+        void testarCenarioFalha();
+        void setUp();
+        void tearDown();
+
+    public:
+        const static bool SUCESSO = true, FALHA = false;
+
+        bool run();
+};
+
+//Matricula: 180043013
+class TUDinheiro {
+    private:
+        const static int VALOR_VALIDO;
+        const static int VALOR_INVALIDO;
+
+        Dinheiro *dinheiro;
+        int estado;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso();
+        void testarCenarioFalha();
+    public:
+        const static int SUCESSO =  0;
+        const static int FALHA   = -1;
+
+        int run();
+    };
 #endif 
