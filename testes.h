@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Matricula: 170153169
 class TUSenha {
 private:
     const static string VALOR_VALIDO;
@@ -25,6 +26,7 @@ public:
     int run();
 };
 
+//Matricula: 170153169
 class TUSetor {
 private:
     const static string VALOR_VALIDO;
@@ -44,6 +46,7 @@ public:
     int run();
 };
 
+//Matricula: 170153169
 class TUNome {
 private:
     const static string VALOR_VALIDO;
@@ -63,6 +66,7 @@ public:
     int run();
 };
 
+//Matricula: 170153169
 class TUPercentual {
 private:
     const static int VALOR_VALIDO;
@@ -82,6 +86,7 @@ public:
     int run();
 };
 
+//Matricula: 231036050
 class TUData {
     private:
         const string valores_validos[4] = {"18-04-2005","31-12-2055","29-02-2012","01-01-2001"};
@@ -100,6 +105,7 @@ class TUData {
         bool run();
 };
 
+//Matricula: 231036050
 class TUCPF {
     private:
         const string valores_validos[4] = {"034.572.150-06", "967.336.320-04", "637.876.500-67", "169.986.650-32"}; //gerados com gerador aleatório de CPFs válidos
@@ -118,6 +124,7 @@ class TUCPF {
         bool run();
 };
 
+//Matricula: 231036050
 class TUEstado {
     private:
         const string valores_validos[3] = {"Previsto", "Liquidado", "Inadimplente"};
@@ -136,6 +143,7 @@ class TUEstado {
         bool run();
 };
 
+//Matricula: 231036050
 class TUCodigoDePagamento {
     private:
         const string valores_validos[3] = {"12345678", "18375801", "24274383"};
@@ -155,7 +163,7 @@ class TUCodigoDePagamento {
         bool run();
 };
 
-
+//Matricula: 231036050
 class TUPagamento {
     private:
         const string valores[4] = {"35", "12345678", "30-03-2030", "Inadimplente"};
@@ -176,6 +184,7 @@ class TUPagamento {
         bool run();
 };
 
+//Matricula: 170153169
 class TUConta {
     private:
         const std::string valores[3] = {"12345678900", "João da Silva", "senha123"};
@@ -192,6 +201,7 @@ class TUConta {
         bool run();
 };
 
+//Matricula: 170153169
 class TUTitulo {
     private:
         const std::string valores[6] = {"1", "Empresa X", "Agricultura", "01-01-2024", "01-02-2024", "1000.0"};
