@@ -1,0 +1,109 @@
+\chapter{Trabalho 1 -\/ Técnicas de Programação 1 (UnB)}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Trabalho 1 -\/ Técnicas de Programação 1 (UnB)@{Trabalho 1 -\/ Técnicas de Programação 1 (UnB)}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{📝 Descrição}{📝 Descrição}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Este projeto implementa diversas classes de domínio e entidades para um sistema de gerenciamento que inclui a validação de diferentes tipos de dados, como código de pagamento, código de título, \doxylink{class_c_p_f}{CPF}, data, dinheiro, estado, nome, percentual, senha e setor. O objetivo é garantir que todos os dados sigam regras específicas de formatação e validação.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{🚀 Funcionalidades}{🚀 Funcionalidades}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\bfseries{Validação de Dados}}\+: Valida diversos tipos de dados para garantir que sigam regras específicas.
+\item {\bfseries{Gestão de Entidades}}\+: Permite a criação de entidades que utilizam os dados validados.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{💻 Domínios e Métodos Utilizados}{💻 Domínios e Métodos Utilizados}}\label{md__r_e_a_d_m_e_autotoc_md3}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{Classe Código de Pagamento}{Classe Código de Pagamento}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{Formato}}\+: XXXXXXXX (X é dígito, primeiro dígito é diferente de zero)
+\item {\ttfamily validar}\+: Valida o formato do código de pagamento.
+\item {\ttfamily set\+Valor}\+: Define o valor do código de pagamento após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor do código de pagamento.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{Classe Código de Título}{Classe Código de Título}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\bfseries{Formato}}\+: Prefixos (CDB, CRA, CRI, LCA, LCI, DEB) seguidos por XXXXXXXX (X é letra maiúscula ou dígito)
+\item {\ttfamily validar}\+: Valida o formato do código de título.
+\item {\ttfamily set\+Valor}\+: Define o valor do código de título após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor do código de título.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{Classe CPF}{Classe CPF}}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\bfseries{Formato}}\+: XXX.\+XXX.\+XXX-\/CC (X é dígito, CC são caracteres de validação)
+\item {\ttfamily validar}\+: Valida o formato e os caracteres de validação do \doxylink{class_c_p_f}{CPF}.
+\item {\ttfamily set\+Valor}\+: Define o valor do \doxylink{class_c_p_f}{CPF} após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor do \doxylink{class_c_p_f}{CPF}.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{\texorpdfstring{Classe Data}{Classe Data}}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item {\bfseries{Formato}}\+: DD-\/\+MM-\/\+AAAA (DD\+: 01-\/31, MM\+: 01-\/12, AAAA\+: 2000-\/2100)
+\item {\ttfamily validar}\+: Valida o formato e os valores da data.
+\item {\ttfamily set\+Valor}\+: Define o valor da data após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor da data.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{Classe Dinheiro}{Classe Dinheiro}}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{Valor}}\+: 0 a 1.\+000.\+000,00
+\item {\ttfamily validar}\+: Valida o valor de dinheiro.
+\item {\ttfamily set\+Valor}\+: Define o valor de dinheiro após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor de dinheiro.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{\texorpdfstring{Classe Estado}{Classe Estado}}\label{md__r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyItemize}
+\item {\bfseries{Valores Permitidos}}\+: Previsto, Liquidado, Inadimplente
+\item {\ttfamily validar}\+: Valida o estado.
+\item {\ttfamily set\+Valor}\+: Define o valor do estado após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor do estado.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{Classe Nome}{Classe Nome}}\label{md__r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyItemize}
+\item {\bfseries{Formato}}\+: Um ou dois termos, cada termo com 3 a 10 caracteres, cada caractere é letra, termos são separados por um espaço, primeiro caractere de cada termo é letra maiúscula.
+\item {\ttfamily validar}\+: Valida o formato do nome.
+\item {\ttfamily set\+Valor}\+: Define o valor do nome após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor do nome.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{\texorpdfstring{Classe Percentual}{Classe Percentual}}\label{md__r_e_a_d_m_e_autotoc_md11}
+
+\begin{DoxyItemize}
+\item {\bfseries{Valor}}\+: 0 a 100
+\item {\ttfamily validar}\+: Valida o valor percentual.
+\item {\ttfamily set\+Valor}\+: Define o valor percentual após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor percentual.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{\texorpdfstring{Classe Senha}{Classe Senha}}\label{md__r_e_a_d_m_e_autotoc_md12}
+
+\begin{DoxyItemize}
+\item {\bfseries{Formato}}\+: XXXXXX (X é dígito, primeiro dígito é diferente de zero, não há dígito duplicado, não é sequência crescente ou decrescente)
+\item {\ttfamily validar}\+: Valida o formato da senha.
+\item {\ttfamily set\+Valor}\+: Define o valor da senha após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor da senha.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{\texorpdfstring{Classe Setor}{Classe Setor}}\label{md__r_e_a_d_m_e_autotoc_md13}
+
+\begin{DoxyItemize}
+\item {\bfseries{Valores Permitidos}}\+: Agricultura, Construção civil, Energia, Finanças, Imobiliário, Papel e celulose, Pecuária, Química e petroquímica, Metalurgia e siderurgia, Mineração
+\item {\ttfamily validar}\+: Valida o setor.
+\item {\ttfamily set\+Valor}\+: Define o valor do setor após validação.
+\item {\ttfamily get\+Valor}\+: Retorna o valor do setor.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysection{\texorpdfstring{📖 Estrutura do Projeto}{📖 Estrutura do Projeto}}\label{md__r_e_a_d_m_e_autotoc_md14}
+O projeto está estruturado da seguinte forma\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{dominios_8h_source}{dominios.\+h}}}\+: Contém as definições das classes de domínio.
+\item {\bfseries{dominios.\+cpp}}\+: Implementa os métodos das classes de domínio.
+\item {\bfseries{\doxylink{entidades_8h_source}{entidades.\+h}}}\+: Define as classes de entidade que utilizam os domínios.
+\item {\bfseries{entidades.\+cpp}}\+: Implementa os métodos das classes de entidade.
+\item {\bfseries{main.\+cpp}}\+: Contém o código principal para testar as funcionalidades do projeto.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysection{\texorpdfstring{📦 Como Compilar e Executar}{📦 Como Compilar e Executar}}\label{md__r_e_a_d_m_e_autotoc_md15}
+Para compilar e executar o projeto, siga os passos abaixo\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Compilar os arquivos\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++\ -\/o\ programa\ dominios.cpp\ entidades.cpp\ main.cpp}
+
+\end{DoxyCode}
+
+\item {\bfseries{Executar o programa\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./programa}
+
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}

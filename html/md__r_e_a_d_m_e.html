@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tabalho 1 TP1: Trabalho 1 - Técnicas de Programação 1 (UnB)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Tabalho 1 TP1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">Trabalho 1 - Técnicas de Programação 1 (UnB)</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+📝 Descrição</h1>
+<p>Este projeto implementa diversas classes de domínio e entidades para um sistema de gerenciamento que inclui a validação de diferentes tipos de dados, como código de pagamento, código de título, <a class="el" href="class_c_p_f.html">CPF</a>, data, dinheiro, estado, nome, percentual, senha e setor. O objetivo é garantir que todos os dados sigam regras específicas de formatação e validação.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+🚀 Funcionalidades</h1>
+<ul>
+<li><b>Validação de Dados</b>: Valida diversos tipos de dados para garantir que sigam regras específicas.</li>
+<li><b>Gestão de Entidades</b>: Permite a criação de entidades que utilizam os dados validados.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+💻 Domínios e Métodos Utilizados</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Classe Código de Pagamento</h2>
+<ul>
+<li><b>Formato</b>: XXXXXXXX (X é dígito, primeiro dígito é diferente de zero)</li>
+<li><code>validar</code>: Valida o formato do código de pagamento.</li>
+<li><code>setValor</code>: Define o valor do código de pagamento após validação.</li>
+<li><code>getValor</code>: Retorna o valor do código de pagamento.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Classe Código de Título</h2>
+<ul>
+<li><b>Formato</b>: Prefixos (CDB, CRA, CRI, LCA, LCI, DEB) seguidos por XXXXXXXX (X é letra maiúscula ou dígito)</li>
+<li><code>validar</code>: Valida o formato do código de título.</li>
+<li><code>setValor</code>: Define o valor do código de título após validação.</li>
+<li><code>getValor</code>: Retorna o valor do código de título.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Classe CPF</h2>
+<ul>
+<li><b>Formato</b>: XXX.XXX.XXX-CC (X é dígito, CC são caracteres de validação)</li>
+<li><code>validar</code>: Valida o formato e os caracteres de validação do <a class="el" href="class_c_p_f.html">CPF</a>.</li>
+<li><code>setValor</code>: Define o valor do <a class="el" href="class_c_p_f.html">CPF</a> após validação.</li>
+<li><code>getValor</code>: Retorna o valor do <a class="el" href="class_c_p_f.html">CPF</a>.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Classe Data</h2>
+<ul>
+<li><b>Formato</b>: DD-MM-AAAA (DD: 01-31, MM: 01-12, AAAA: 2000-2100)</li>
+<li><code>validar</code>: Valida o formato e os valores da data.</li>
+<li><code>setValor</code>: Define o valor da data após validação.</li>
+<li><code>getValor</code>: Retorna o valor da data.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Classe Dinheiro</h2>
+<ul>
+<li><b>Valor</b>: 0 a 1.000.000,00</li>
+<li><code>validar</code>: Valida o valor de dinheiro.</li>
+<li><code>setValor</code>: Define o valor de dinheiro após validação.</li>
+<li><code>getValor</code>: Retorna o valor de dinheiro.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Classe Estado</h2>
+<ul>
+<li><b>Valores Permitidos</b>: Previsto, Liquidado, Inadimplente</li>
+<li><code>validar</code>: Valida o estado.</li>
+<li><code>setValor</code>: Define o valor do estado após validação.</li>
+<li><code>getValor</code>: Retorna o valor do estado.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Classe Nome</h2>
+<ul>
+<li><b>Formato</b>: Um ou dois termos, cada termo com 3 a 10 caracteres, cada caractere é letra, termos são separados por um espaço, primeiro caractere de cada termo é letra maiúscula.</li>
+<li><code>validar</code>: Valida o formato do nome.</li>
+<li><code>setValor</code>: Define o valor do nome após validação.</li>
+<li><code>getValor</code>: Retorna o valor do nome.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Classe Percentual</h2>
+<ul>
+<li><b>Valor</b>: 0 a 100</li>
+<li><code>validar</code>: Valida o valor percentual.</li>
+<li><code>setValor</code>: Define o valor percentual após validação.</li>
+<li><code>getValor</code>: Retorna o valor percentual.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Classe Senha</h2>
+<ul>
+<li><b>Formato</b>: XXXXXX (X é dígito, primeiro dígito é diferente de zero, não há dígito duplicado, não é sequência crescente ou decrescente)</li>
+<li><code>validar</code>: Valida o formato da senha.</li>
+<li><code>setValor</code>: Define o valor da senha após validação.</li>
+<li><code>getValor</code>: Retorna o valor da senha.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Classe Setor</h2>
+<ul>
+<li><b>Valores Permitidos</b>: Agricultura, Construção civil, Energia, Finanças, Imobiliário, Papel e celulose, Pecuária, Química e petroquímica, Metalurgia e siderurgia, Mineração</li>
+<li><code>validar</code>: Valida o setor.</li>
+<li><code>setValor</code>: Define o valor do setor após validação.</li>
+<li><code>getValor</code>: Retorna o valor do setor.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md14"></a>
+📖 Estrutura do Projeto</h1>
+<p>O projeto está estruturado da seguinte forma:</p>
+<ul>
+<li><b><a class="el" href="dominios_8h_source.html">dominios.h</a></b>: Contém as definições das classes de domínio.</li>
+<li><b>dominios.cpp</b>: Implementa os métodos das classes de domínio.</li>
+<li><b><a class="el" href="entidades_8h_source.html">entidades.h</a></b>: Define as classes de entidade que utilizam os domínios.</li>
+<li><b>entidades.cpp</b>: Implementa os métodos das classes de entidade.</li>
+<li><b>main.cpp</b>: Contém o código principal para testar as funcionalidades do projeto.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md15"></a>
+📦 Como Compilar e Executar</h1>
+<p>Para compilar e executar o projeto, siga os passos abaixo:</p>
+<ol type="1">
+<li><b>Compilar os arquivos:</b> <div class="fragment"><div class="line">g++ -o programa dominios.cpp entidades.cpp main.cpp</div>
+</div><!-- fragment --></li>
+<li><b>Executar o programa:</b> <div class="fragment"><div class="line">./programa</div>
+</div><!-- fragment --> </li>
+</ol>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

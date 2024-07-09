@@ -1,0 +1,57 @@
+\doxysection{Referência da Classe Codigo\+De\+Pagamento}
+\hypertarget{class_codigo_de_pagamento}{}\label{class_codigo_de_pagamento}\index{CodigoDePagamento@{CodigoDePagamento}}
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_codigo_de_pagamento_a2e22d63a95fed4a1a75ac8aa1b824737}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor atual do Código de \doxylink{class_pagamento}{Pagamento}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_codigo_de_pagamento_a7746edab7333c504a4e1489f6811c656}{set\+Valor}} (const string \&)
+\begin{DoxyCompactList}\small\item\em Atualiza o valor do Código de \doxylink{class_pagamento}{Pagamento}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Código no formato XXXXXXXX, em que X é dígito (0-\/9). Primeiro dígito é ser diferente de 0. 
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{class_codigo_de_pagamento_a2e22d63a95fed4a1a75ac8aa1b824737}\index{CodigoDePagamento@{CodigoDePagamento}!getValor@{getValor}}
+\index{getValor@{getValor}!CodigoDePagamento@{CodigoDePagamento}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_codigo_de_pagamento_a2e22d63a95fed4a1a75ac8aa1b824737} 
+const string Codigo\+De\+Pagamento\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o valor atual do Código de \doxylink{class_pagamento}{Pagamento}. 
+
+\begin{DoxyReturn}{Retorna}
+valor (string) 
+\end{DoxyReturn}
+\Hypertarget{class_codigo_de_pagamento_a7746edab7333c504a4e1489f6811c656}\index{CodigoDePagamento@{CodigoDePagamento}!setValor@{setValor}}
+\index{setValor@{setValor}!CodigoDePagamento@{CodigoDePagamento}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_codigo_de_pagamento_a7746edab7333c504a4e1489f6811c656} 
+void Codigo\+De\+Pagamento\+::set\+Valor (\begin{DoxyParamCaption}\item[{const string \&}]{}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza o valor do Código de \doxylink{class_pagamento}{Pagamento}. 
+
+Valor deve ser no formato XXXXXXXX, em que X é dígito (0-\/9). Primeiro dígito deve ser diferente de 0. 
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & (string) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceções}
+{\em invalid\+\_\+argument} & é lançado caso valor seja inválido. \\
+\hline
+\end{DoxyExceptions}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+dominios.\+h\end{DoxyCompactItemize}

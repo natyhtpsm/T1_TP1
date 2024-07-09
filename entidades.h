@@ -3,51 +3,6 @@
 
 #include "dominios.h"
 
-class Entidade {
-    private:
-        Senha senha;
-        Setor setor;
-        CPF cpf;
-        Data data;
-        Estado estado;
-        Nome nome;
-        Percentual percentual;
-        CodigoDePagamento codigoPagamento;
-        CodigoDeTitulo codigoTitulo;
-        Dinheiro dinheiro;
-
-    public:
-        void setSenha(const Senha&);
-        Senha getSenha() const;
-
-        void setSetor(const Setor&);
-        Setor getSetor() const;
-
-        void setCPF(const CPF&);
-        CPF getCPF() const;
-
-        void setData(const Data&);
-        Data getData() const;
-
-        void setEstado(const Estado&);
-        Estado getEstado() const;
-
-        void setNome(const Nome&);
-        Nome getNome() const;
-
-        void setPercentual(const Percentual&);
-        Percentual getPercentual() const;
-
-        void setCodigoPagamento(const CodigoDePagamento&);
-        CodigoDePagamento getCodigoPagamento() const;
-
-        void setCodigoTitulo(const CodigoDeTitulo&);
-        CodigoDeTitulo getCodigoTitulo() const;
-
-        void setDinheiro(const Dinheiro&);
-        Dinheiro getDinheiro() const;
-};
-
 /**
  * Composto por:\n
  *  código (CodigoDePagamento)\n
@@ -125,6 +80,12 @@ inline Estado Pagamento::getEstado() {
     return estado;
 }
 
+/**
+ * Composta por:\n
+ *  cpf (CPF)\n
+ *  nome (Nome)\n
+ *  senha (Senha)
+ */
 //Matricula: 170153169
 class Conta {
     private:
@@ -133,16 +94,49 @@ class Conta {
         Senha senha;
 
     public:
+        /**
+         * @brief Atualiza a instância do cpf.
+         * @param cpf (CPF)
+         */
         void setCpf(const CPF&);
+        /**
+         * @brief Retorna a instância do cpf.
+         * @return cpf (CPF)
+         */
         CPF getCpf() const;
 
+        /**
+         * @brief Atualiza a instância do nome.
+         * @param nome (Nome)
+         */
         void setNome(const Nome&);
+        /**
+         * @brief Retorna a instância do nome.
+         * @return nome (Nome)
+         */
         Nome getNome() const;
 
+        /**
+         * @brief Atualiza a instância da senha.
+         * @param senha (Senha)
+         */
         void setSenha(const Senha&);
+        /**
+         * @brief Retorna a instância da senha.
+         * @return senha (Senha)
+         */
         Senha getSenha() const;
 };
 
+/**
+ * Composto por:\n
+ *  código (CodigoDeTitulo)\n
+ *  emissor (Nome)\n
+ *  setor (Setor)\n
+ *  emissão (Data)\n
+ *  vencimento (Data)\n
+ *  valor (Dinheiro)
+ */
 //Matricula: 170153169
 class Titulo {
     private:
@@ -154,22 +148,70 @@ class Titulo {
         Dinheiro valor;
 
     public:
+        /**
+         * @brief Atualiza a instância do código.
+         * @param codigo (CodigoDeTitulo)
+         */
         void setCodigo(const CodigoDeTitulo&);
+        /**
+         * @brief Retorna a instância do código.
+         * @return codigo (CodigoDeTitulo)
+         */
         CodigoDeTitulo getCodigo() const;
 
+        /**
+         * @brief Atualiza a instância do emissor.
+         * @param emissor (Nome)
+         */
         void setEmissor(const Nome&);
+        /**
+         * @brief Retorna a instância do emissor.
+         * @return emissor (Nome)
+         */
         Nome getEmissor() const;
 
+        /**
+         * @brief Atualiza a instância do setor.
+         * @param setor (Setor)
+         */
         void setSetor(const Setor&);
+        /**
+         * @brief Retorna a instância do setor.
+         * @return setor (Setor)
+         */
         Setor getSetor() const;
 
+        /**
+         * @brief Atualiza a instância da emissão.
+         * @param emissao (Data)
+         */
         void setEmissao(const Data&);
+        /**
+         * @brief Retorna a instância da emissão.
+         * @return emissao (Data)
+         */
         Data getEmissao() const;
 
+        /**
+         * @brief Atualiza a instância do vencimento.
+         * @param vencimento (Data)
+         */
         void setVencimento(const Data&);
+        /**
+         * @brief Retorna a instância do vencimento.
+         * @return vencimento (Data)
+         */
         Data getVencimento() const;
 
+        /**
+         * @brief Atualiza a instância do valor.
+         * @param valor (Dinheiro)
+         */
         void setValor(const Dinheiro&);
+        /**
+         * @brief Retorna a instância do valor.
+         * @return valor (Dinheiro)
+         */
         Dinheiro getValor() const;
 };
 
