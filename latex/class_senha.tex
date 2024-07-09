@@ -1,0 +1,57 @@
+\doxysection{Referência da Classe Senha}
+\hypertarget{class_senha}{}\label{class_senha}\index{Senha@{Senha}}
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_senha_aa9852a242d24249eca7c844811d10513}{set\+Valor}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Atualiza o valor da \doxylink{class_senha}{Senha}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_senha_acc03ecddb9a26f8b07fb8bb079f4e055}{get\+Valor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o valor atual da \doxylink{class_senha}{Senha}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\doxylink{class_senha}{Senha} no formato XXXXXX, em que é um dígito de 0-\/9. Não pode haver dígitos duplicados e o primeiro dígito deve ser diferente de 0. A senha não pode ser uma sequência crescente ou decresente de dígitos. 
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{class_senha_acc03ecddb9a26f8b07fb8bb079f4e055}\index{Senha@{Senha}!getValor@{getValor}}
+\index{getValor@{getValor}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_senha_acc03ecddb9a26f8b07fb8bb079f4e055} 
+std\+::string Senha\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna o valor atual da \doxylink{class_senha}{Senha}. 
+
+\begin{DoxyReturn}{Retorna}
+valor (string). 
+\end{DoxyReturn}
+\Hypertarget{class_senha_aa9852a242d24249eca7c844811d10513}\index{Senha@{Senha}!setValor@{setValor}}
+\index{setValor@{setValor}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_senha_aa9852a242d24249eca7c844811d10513} 
+void Senha\+::set\+Valor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza o valor da \doxylink{class_senha}{Senha}. 
+
+\doxylink{class_senha}{Senha} no formato XXXXXX, em que X é um dígito de 0-\/9. Não pode haver dígitos duplicados e o primeiro dígito deve ser diferente de 0. A senha não pode ser uma sequência crescente ou decresente de dígitos. 
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & (string). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceções}
+{\em invalid\+\_\+argument} & é lançado caso valor seja inválido. \\
+\hline
+\end{DoxyExceptions}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+dominios.\+h\end{DoxyCompactItemize}

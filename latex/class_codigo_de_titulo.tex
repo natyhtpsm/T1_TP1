@@ -1,0 +1,64 @@
+\doxysection{Referência da Classe Codigo\+De\+Titulo}
+\hypertarget{class_codigo_de_titulo}{}\label{class_codigo_de_titulo}\index{CodigoDeTitulo@{CodigoDeTitulo}}
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_codigo_de_titulo_aac66818dab1339d2c443c28938b8e54b}{get\+Valor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o valor atual do Código de Título. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_codigo_de_titulo_a340d7e66a6ec13915142648dcc06b4a8}{set\+Valor}} (const char \texorpdfstring{$\ast$}{*}valor)
+\begin{DoxyCompactList}\small\item\em Atualiza o valor do Código de Título. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Código em um dos seguintes formatos\+:~\newline
+CDBXXXXXXXX~\newline
+CRAXXXXXXXX~\newline
+CRIXXXXXXXX~\newline
+LCAXXXXXXXX~\newline
+LCIXXXXXXXX~\newline
+DEBXXXXXXXX~\newline
+Em que X é dígito (0-\/9) ou letra maiúscula (A-\/Z) 
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{class_codigo_de_titulo_aac66818dab1339d2c443c28938b8e54b}\index{CodigoDeTitulo@{CodigoDeTitulo}!getValor@{getValor}}
+\index{getValor@{getValor}!CodigoDeTitulo@{CodigoDeTitulo}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_codigo_de_titulo_aac66818dab1339d2c443c28938b8e54b} 
+const char \texorpdfstring{$\ast$}{*} Codigo\+De\+Titulo\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna o valor atual do Código de Título. 
+
+\begin{DoxyReturn}{Retorna}
+valor (char\texorpdfstring{$\ast$}{*}) 
+\end{DoxyReturn}
+\Hypertarget{class_codigo_de_titulo_a340d7e66a6ec13915142648dcc06b4a8}\index{CodigoDeTitulo@{CodigoDeTitulo}!setValor@{setValor}}
+\index{setValor@{setValor}!CodigoDeTitulo@{CodigoDeTitulo}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_codigo_de_titulo_a340d7e66a6ec13915142648dcc06b4a8} 
+void Codigo\+De\+Titulo\+::set\+Valor (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza o valor do Código de Título. 
+
+Valor deve seguir o formato explicitado na descrição da classe. 
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & (char\texorpdfstring{$\ast$}{*}) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceções}
+{\em Lança} & invalid\+\_\+argument caso valor seja inválido. \\
+\hline
+\end{DoxyExceptions}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+dominios.\+h\end{DoxyCompactItemize}
