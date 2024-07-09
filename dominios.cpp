@@ -366,8 +366,8 @@ void CodigoDeTitulo::validar(const char* valor) {
     while (valor[length] != '\0') {
         length++;
     }
+    
     if (length != 11) {
-        std::cerr << "Erro: Codigo de título deve ter exatamente 11 caracteres." << std::endl;
         std::exit(EXIT_FAILURE);
     }
 
@@ -387,13 +387,11 @@ void CodigoDeTitulo::validar(const char* valor) {
         }
     }
     if (!prefix_valid) {
-        std::cerr << "Erro: Prefixo inválido." << std::endl;
         std::exit(EXIT_FAILURE);
     }
 
     for (int i = 3; i < 11; ++i) {
         if (!((valor[i] >= '0' && valor[i] <= '9') || (valor[i] >= 'A' && valor[i] <= 'Z'))) {
-            std::cerr << "Erro: Código de título deve conter apenas letras maiúsculas ou dígitos após o prefixo." << std::endl;
             std::exit(EXIT_FAILURE);
         }
     }
@@ -410,3 +408,4 @@ void CodigoDeTitulo::setValor(const char* valor) {
     }
     codigo[11] = '\0'; 
 }
+

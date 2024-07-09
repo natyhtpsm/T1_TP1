@@ -93,94 +93,49 @@ inline Estado Pagamento::getEstado() {
 //Matricula: 170153169
 class Conta {
     private:
-        std::string cpf;
-        std::string nome;
-        std::string senha;
+        CPF cpf;
+        Nome nome;
+        Senha senha;
 
     public:
-        void setCpf(const std::string&);
-        std::string getCpf();
+        void setCpf(const CPF&);
+        CPF getCpf() const;
 
-        void setNome(const std::string&);
-        std::string getNome();
+        void setNome(const Nome&);
+        Nome getNome() const;
 
-        void setSenha(const std::string&);
-        std::string getSenha();
+        void setSenha(const Senha&);
+        Senha getSenha() const;
 };
-
-//Matricula: 170153169
-inline std::string Conta::getCpf() {
-    return cpf;
-}
-
-//Matricula: 170153169
-inline std::string Conta::getNome() {
-    return nome;
-}
-
-//Matricula: 170153169
-inline std::string Conta::getSenha() {
-    return senha;
-}
 
 //Matricula: 170153169
 class Titulo {
     private:
-        std::string codigo; 
-        std::string emissor;
-        std::string setor;
-        std::string emissao;
-        std::string vencimento;
-        double valor;
+        CodigoDeTitulo codigo;
+        Nome emissor;
+        Setor setor;
+        Data emissao;
+        Data vencimento;
+        Dinheiro valor;
 
     public:
-        void setCodigo(const std::string&);
-        std::string getCodigo();
+        void setCodigo(const CodigoDeTitulo&);
+        CodigoDeTitulo getCodigo() const;
 
-        void setEmissor(const std::string&);
-        std::string getEmissor();
+        void setEmissor(const Nome&);
+        Nome getEmissor() const;
 
-        void setSetor(const std::string&);
-        std::string getSetor();
+        void setSetor(const Setor&);
+        Setor getSetor() const;
 
-        void setEmissao(const std::string&);
-        std::string getEmissao();
+        void setEmissao(const Data&);
+        Data getEmissao() const;
 
-        void setVencimento(const std::string&);
-        std::string getVencimento();
+        void setVencimento(const Data&);
+        Data getVencimento() const;
 
-        void setValor(double);
-        double getValor();
+        void setValor(const Dinheiro&);
+        Dinheiro getValor() const;
 };
-
-//Matricula: 170153169
-inline std::string Titulo::getCodigo() {
-    return codigo;
-}
-
-//Matricula: 170153169
-inline std::string Titulo::getEmissor() {
-    return emissor;
-}
-
-//Matricula: 170153169
-inline std::string Titulo::getSetor() {
-    return setor;
-}
-
-//Matricula: 170153169
-inline std::string Titulo::getEmissao() {
-    return emissao;
-}
-
-//Matricula: 170153169
-inline std::string Titulo::getVencimento() {
-    return vencimento;
-}
-
-//Matricula: 170153169
-inline double Titulo::getValor() {
-    return valor;
-}
 
 #endif

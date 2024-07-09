@@ -1,5 +1,6 @@
 #include "testes.h"
 #include <string.h>
+#include <iostream>
 
 using namespace std;
 
@@ -384,15 +385,33 @@ void TUConta::tearDown() {
 }
 
 void TUConta::test() {
-    std::string valor_cpf = valores[0];
-    std::string valor_nome = valores[1];
-    std::string valor_senha = valores[2];
+    
+    CPF valor_cpf;
+    try {
+        valor_cpf.setValor("123.456.789-09");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    Nome valor_nome;
+    try {
+        valor_nome.setValor("João da Silva");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    Senha valor_senha;
+    try {
+        valor_senha.setValor("123789");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
 
     conta->setCpf(valor_cpf);
     conta->setNome(valor_nome);
     conta->setSenha(valor_senha);
 
-    if (conta->getCpf() != valor_cpf || conta->getNome() != valor_nome || conta->getSenha() != valor_senha) {
+    if (conta->getCpf().getValor() != "123.456.789-09" || conta->getNome().getValor() != "João da Silva" || conta->getSenha().getValor() != "123789") {
         estado = FALHA;
     }
 }
@@ -414,21 +433,88 @@ void TUTitulo::tearDown() {
 }
 
 void TUTitulo::test() {
-    std::string valor_codigo = valores[0];
-    std::string valor_emissor = valores[1];
-    std::string valor_setor = valores[2];
-    std::string valor_emissao = valores[3];
-    std::string valor_vencimento = valores[4];
-    double valor_valor = std::stod(valores[5]);
+    CodigoDeTitulo valor_codigo;
+    try {
+        std::string codigo_titulo = "CDB1234ABCD"; 
+        valor_codigo.setValor(codigo_titulo.c_str());
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
 
-    titulo->setCodigo(valor_codigo);
-    titulo->setEmissor(valor_emissor);
-    titulo->setSetor(valor_setor);
-    titulo->setEmissao(valor_emissao);
-    titulo->setVencimento(valor_vencimento);
-    titulo->setValor(valor_valor);
+    Nome valor_emissor;
+    try {
+        valor_emissor.setValor("Empresa X");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
 
-    if (titulo->getCodigo() != valor_codigo || titulo->getEmissor() != valor_emissor || titulo->getSetor() != valor_setor || titulo->getEmissao() != valor_emissao || titulo->getVencimento() != valor_vencimento || titulo->getValor() != valor_valor) {
+    Setor valor_setor;
+    try {
+        valor_setor.setValor("Agricultura");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    Data valor_emissao;
+    try {
+        valor_emissao.setValor("01-01-2024");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    Data valor_vencimento;
+    try {
+        valor_vencimento.setValor("01-02-2024");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    Dinheiro valor_valor;
+    try {
+        valor_valor.setValor(1000.0);
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    try {
+        titulo->setCodigo(valor_codigo);
+        titulo->setEmissor(valor_emissor);
+        titulo->setSetor(valor_setor);
+        titulo->setEmissao(valor_emissao);
+        titulo->setVencimento(valor_vencimento);
+        titulo->setValor(valor_valor);
+        std::string codigo_obtido = titulo->getCodigo().getValor();
+  
+        if (codigo_obtido != "CDB1234ABCD") {
+            estado = FALHA;
+        } else {
+        }
+
+        if (titulo->getEmissor().getValor() != "Empresa X") {
+            estado = FALHA;
+        } else {
+        }
+
+        if (titulo->getSetor().getValor() != "Agricultura") {
+            estado = FALHA;
+        } else {
+        }
+
+        if (titulo->getEmissao().getValor() != "01-01-2024") {
+            estado = FALHA;
+        } else {
+        }
+
+        if (titulo->getVencimento().getValor() != "01-02-2024") {
+            estado = FALHA;
+        } else {
+        }
+
+        if (titulo->getValor().getValor() != 1000.0) {
+            estado = FALHA;
+        } else {
+        }
+    } catch (const std::invalid_argument& e) {
         estado = FALHA;
     }
 }
@@ -439,6 +525,10 @@ bool TUTitulo::run() {
     tearDown();
     return estado;
 }
+
+
+const int TUCodigoDeTitulo::SUCESSO;
+const int TUCodigoDeTitulo::FALHA;
 
 void TUCodigoDeTitulo::setUp() {
     codigo_de_titulo = new CodigoDeTitulo();
@@ -468,21 +558,26 @@ void TUCodigoDeTitulo::testarCenarioFalha() {
             codigo_de_titulo->setValor(valor.c_str());
             estado = FALHA;
         } catch (std::invalid_argument &excecao) {
-            
         }
     }
 }
 
-bool TUCodigoDeTitulo::run() {
+int TUCodigoDeTitulo::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
     tearDown();
+    if (estado == SUCESSO) {
+        std::cout << "Teste de Código de Título passou.\n";
+    } else {
+        std::cout << "Teste de Código de Título falhou.\n";
+    }
     return estado;
 }
 
-const int TUDinheiro::VALOR_VALIDO = 9876543;
-const int TUDinheiro::VALOR_INVALIDO = -10;
+
+const double TUDinheiro::VALOR_VALIDO = 987654.32;
+const double TUDinheiro::VALOR_INVALIDO = -10.0;
 
 void TUDinheiro::setUp() {
     dinheiro = new Dinheiro();
@@ -496,9 +591,11 @@ void TUDinheiro::tearDown() {
 void TUDinheiro::testarCenarioSucesso() {
     try {
         dinheiro->setValor(VALOR_VALIDO);
-        if (dinheiro->getValor() != VALOR_VALIDO)
+        if (dinheiro->getValor() != VALOR_VALIDO) {
             estado = FALHA;
-    } catch (invalid_argument &excecao) {
+        } else {
+        }
+    } catch (std::invalid_argument &excecao) {
         estado = FALHA;
     }
 }
@@ -507,8 +604,7 @@ void TUDinheiro::testarCenarioFalha() {
     try {
         dinheiro->setValor(VALOR_INVALIDO);
         estado = FALHA;
-    } catch (invalid_argument &excecao) {
-        return;
+    } catch (std::invalid_argument &excecao) {
     }
 }
 
@@ -517,5 +613,12 @@ int TUDinheiro::run() {
     testarCenarioSucesso();
     testarCenarioFalha();
     tearDown();
+    if (estado == SUCESSO) {
+        std::cout << "Teste de Dinheiro passou.\n";
+    } else {
+        std::cout << "Teste de Dinheiro falhou.\n";
+    }
     return estado;
 }
+
+

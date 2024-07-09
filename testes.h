@@ -225,7 +225,7 @@ class TUCodigoDeTitulo {
         const std::string valores_invalidos[3] = {"1234567", "cra23490kdf", "DEB9834bfds"};
 
         CodigoDeTitulo *codigo_de_titulo;
-        bool estado;
+        int estado;
 
         void testarCenarioSucesso();
         void testarCenarioFalha();
@@ -233,16 +233,17 @@ class TUCodigoDeTitulo {
         void tearDown();
 
     public:
-        const static bool SUCESSO = true, FALHA = false;
+        const static int SUCESSO =  0;
+        const static int FALHA   = -1;
 
-        bool run();
+        int run();
 };
 
 //Matricula: 180043013
 class TUDinheiro {
     private:
-        const static int VALOR_VALIDO;
-        const static int VALOR_INVALIDO;
+        const static double VALOR_VALIDO;
+        const static double VALOR_INVALIDO;
 
         Dinheiro *dinheiro;
         int estado;
@@ -251,10 +252,11 @@ class TUDinheiro {
         void tearDown();
         void testarCenarioSucesso();
         void testarCenarioFalha();
+
     public:
         const static int SUCESSO =  0;
         const static int FALHA   = -1;
 
         int run();
-    };
+};
 #endif 
