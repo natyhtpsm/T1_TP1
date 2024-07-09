@@ -48,6 +48,13 @@ class Entidade {
         Dinheiro getDinheiro() const;
 };
 
+/**
+ * Composto por:\n
+ *  código (CodigoDePagamento)\n
+ *  data (Data)\n
+ *  percentual (Percentual)\n
+ *  estado (Estado)\n
+ */
 //Matricula: 231036050
 class Pagamento {
     private:
@@ -57,35 +64,63 @@ class Pagamento {
         Estado estado;
 
     public:
+        /**
+         * @brief Atualiza a intância do código.
+         * @param codigo (CodigoDePagamento)
+         */
         void setCodigo(const CodigoDePagamento&);
+        /**
+         * @brief Retorna a instância do código.
+         * @return codigo (CodigoDePagamento)
+         */
         CodigoDePagamento getCodigo();
 
+        /**
+         * @brief Atualiza a instância da data.
+         * @param data (Data)
+         */
         void setData(const Data&);
+        /**
+         * @brief Retorna a instância da data.
+         * @return data (Data)
+         */
         Data getData();
 
+        /**
+         * @brief Atualiza a instância do percentual.
+         * @param percentual (Percentual)
+         */
         void setPercentual(const Percentual&);
+        /**
+         * @brief Retorna a instância do percentual.
+         * @return percentual (Percentual)
+         */
         Percentual getPercentual();
 
+        /**
+         * @brief Atualiza a instância do estado.
+         * @param estado (Estado)
+         */
         void setEstado(const Estado&);
+        /**
+         * @brief Retorna a instância do estado.
+         * @return estado (Estado)
+         */
         Estado getEstado();
 };
 
-//Matricula: 231036050
 inline CodigoDePagamento Pagamento::getCodigo() {
     return codigo;
 }
 
-//Matricula: 231036050
 inline Data Pagamento::getData() {
     return data;
 }
 
-//Matricula: 231036050
 inline Percentual Pagamento::getPercentual() {
     return percentual;
 }
 
-//Matricula: 231036050
 inline Estado Pagamento::getEstado() {
     return estado;
 }

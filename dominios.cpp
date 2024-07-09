@@ -320,7 +320,7 @@ void Estado::validar(const string &estado) {
 }
 
 void CodigoDePagamento::validar(const string &valor) {
-     if (valor.length() != 8) {
+    if (valor.length() != 8) {
         throw invalid_argument("Erro: Codigo de pagamento deve ter exatamente 8 digitos.");
     }
 
@@ -328,32 +328,12 @@ void CodigoDePagamento::validar(const string &valor) {
         throw invalid_argument("Erro: O primeiro digito do codigo de pagamento deve ser diferente de zero.");
     }
 
+    //verifica se todos os caracteres são dígitos
     for (char caracter : valor) {
         if (!isdigit(caracter)) {
             throw invalid_argument("Erro: O codigo de pagamento deve conter apenas digitos.");
         }
     }
-
-    /*int length = 0;
-    while (valor[length] != '\0') {
-        length++;
-    }
-    if (length != 8) {
-        std::cerr << "" << std::endl;
-        std::exit(EXIT_FAILURE);
-    }
-
-    if (valor[0] == '0') {
-        std::cerr << "" << std::endl;
-        std::exit(EXIT_FAILURE);
-    }
-
-    for (int i = 0; i < 8; ++i) {
-        if (valor[i] < '0' || valor[i] > '9') {
-            std::cerr << "" << std::endl;
-            std::exit(EXIT_FAILURE);
-        }
-    }*/
 }
 
 void CodigoDePagamento::setValor(const string &valor) {
