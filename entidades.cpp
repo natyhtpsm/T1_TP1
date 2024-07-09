@@ -1,4 +1,5 @@
 #include "entidades.h"
+#include <iostream>
 
 void Entidade::setSenha(const Senha &senha) {
     this->senha = senha;
@@ -96,38 +97,84 @@ void Pagamento::setPercentual(const Percentual &percentual) {
     this->percentual = percentual;
 }
 
-void Conta::setCpf(const std::string &cpf) {
+void Conta::setCpf(const CPF &cpf) {
+    CPF tempCpf = cpf; 
     this->cpf = cpf;
 }
 
-void Conta::setNome(const std::string &nome) {
+CPF Conta::getCpf() const {
+    return cpf;
+}
+
+void Conta::setNome(const Nome &nome) {
+    Nome tempNome = nome; 
     this->nome = nome;
 }
 
-void Conta::setSenha(const std::string &senha) {
+Nome Conta::getNome() const {
+    return nome;
+}
+
+void Conta::setSenha(const Senha &senha) {
+    Senha tempSenha = senha; 
     this->senha = senha;
 }
 
-void Titulo::setCodigo(const std::string &codigo) {
+Senha Conta::getSenha() const {
+    return senha;
+}
+
+void Titulo::setCodigo(const CodigoDeTitulo &codigo) {
+    CodigoDeTitulo tempCodigo = codigo;
     this->codigo = codigo;
 }
 
-void Titulo::setEmissor(const std::string &emissor) {
+CodigoDeTitulo Titulo::getCodigo() const {
+    return codigo;
+}
+
+
+void Titulo::setEmissor(const Nome &emissor) {
+    Nome tempEmissor = emissor;
     this->emissor = emissor;
 }
 
-void Titulo::setSetor(const std::string &setor) {
+Nome Titulo::getEmissor() const {
+    return emissor;
+}
+
+void Titulo::setSetor(const Setor &setor) {
+    Setor tempSetor = setor;
     this->setor = setor;
 }
 
-void Titulo::setEmissao(const std::string &emissao) {
+Setor Titulo::getSetor() const {
+    return setor;
+}
+
+void Titulo::setEmissao(const Data &emissao) {
+    Data tempEmissao = emissao;
     this->emissao = emissao;
 }
 
-void Titulo::setVencimento(const std::string &vencimento) {
+Data Titulo::getEmissao() const {
+    return emissao;
+}
+
+void Titulo::setVencimento(const Data &vencimento) {
+    Data tempVencimento = vencimento;
     this->vencimento = vencimento;
 }
 
-void Titulo::setValor(double valor) {
+Data Titulo::getVencimento() const {
+    return vencimento;
+}
+
+void Titulo::setValor(const Dinheiro &valor) {
+    Dinheiro tempValor = valor;
     this->valor = valor;
+}
+
+Dinheiro Titulo::getValor() const {
+    return valor;
 }
