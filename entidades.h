@@ -86,10 +86,26 @@ class Pagamento {
          */
         Data getData();
 
+        /**
+         * @brief Atualiza a instância do percentual.
+         * @param percentual (Percentual)
+         */
         void setPercentual(const Percentual&);
+        /**
+         * @brief Retorna a instância do percentual.
+         * @return percentual (Percentual)
+         */
         Percentual getPercentual();
 
+        /**
+         * @brief Atualiza a instância do estado.
+         * @param estado (Estado)
+         */
         void setEstado(const Estado&);
+        /**
+         * @brief Retorna a instância do estado.
+         * @return estado (Estado)
+         */
         Estado getEstado();
 };
 
